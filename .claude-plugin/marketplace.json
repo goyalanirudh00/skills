@@ -5,9 +5,14 @@
   },
   "plugins": [
     {
-      "name": "anirudh-skills",
-      "source": "./",
-      "description": "Anirudh's personal collection of Claude skills."
+      "name": "coding",
+      "source": "./plugins/coding",
+      "description": "Skills for writing, reviewing and designing code."
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Skills for generated text people read."
     }
   ]
 }

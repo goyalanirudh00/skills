@@ -8,20 +8,18 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/dist"
 mkdir -p "$OUT"
 
-if [ $# -gt 0 ]; then
-  names=("$@")
-else
-  names=()
-  for d in "$ROOT"/skills/*/; do names+=("$(basename "$d")"); done
-fi
+shopt -s nullglob
+all=("$ROOT"/plugins/*/skills/*/)
 
-for name in "${names[@]}"; do
-  src="$ROOT/skills/$name"
-  if [ ! -f "$src/SKILL.md" ]; then
+for dir in "${all[@]}"; do
+  dir="${dir%/}"
+  name="$(basename "$dir")"
+  if [ $# -gt 0 ] && [[ ! " $* " == *" $name "* ]]; then continue; fi
+  if [ ! -f "$dir/SKILL.md" ]; then
     echo "skip: $name (no SKILL.md)" >&2
     continue
   fi
   rm -f "$OUT/$name.zip"
-  (cd "$ROOT/skills" && zip -qr "$OUT/$name.zip" "$name")
+  (cd "$(dirname "$dir")" && zip -qr "$OUT/$name.zip" "$name")
   echo "built: dist/$name.zip"
 done
