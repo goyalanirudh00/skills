@@ -1,0 +1,13 @@
+{
+  "name": "anirudh-skills",
+  "owner": {
+    "name": "Anirudh Goyal"
+  },
+  "plugins": [
+    {
+      "name": "anirudh-skills",
+      "source": "./",
+      "description": "Anirudh's personal collection of Claude skills."
+    }
+  ]
+}
