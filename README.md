@@ -10,6 +10,15 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 | writing | [skimmable-bulk-text](plugins/writing/skills/skimmable-bulk-text/SKILL.md) | Writing many short parallel items people skim: titles, alerts, notifications, dashboard cards, summary columns |
 | visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream since it updates weekly |
 
+### Per-project: Superpowers
+
+[obra/superpowers](https://github.com/obra/superpowers) (MIT) is listed in this marketplace but **not enabled globally**. It enforces a full process: brainstorm, write a plan, test-first, hand work to subagents, verify before finishing.
+
+- **Turn it on** for big new builds (multi-day features, greenfield products) where planning and tests up front save rework.
+- **Leave it off** for small fixes and for client codebases, where karpathy-guidelines' "touch only what you must" is the better fit.
+
+To enable it in one project, merge [`claude-code/project-superpowers.json`](claude-code/project-superpowers.json) into that project's `.claude/settings.json`, or run `/plugin install superpowers@anirudh-skills` from inside the project and choose project scope. It runs alongside karpathy-guidelines without conflict.
+
 ## Third-party picks
 
 Installed from the publishers' own marketplaces. Only the plugins below are enabled, not the whole collections.

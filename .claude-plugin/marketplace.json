@@ -21,6 +21,14 @@
         "repo": "cathrynlavery/diagram-design"
       },
       "description": "Editorial HTML/SVG diagrams in 45 types (architecture, sequence, ER, trust boundaries and more). Third-party, by Cathryn Lavery (MIT), pulled live from upstream."
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/obra/superpowers.git"
+      },
+      "description": "Full plan, test-first, subagent workflow by Jesse Vincent (MIT), pulled live from upstream. Enable per project for big new builds, not globally."
     }
   ]
 }
