@@ -8,6 +8,7 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 | --- | --- | --- |
 | coding | [karpathy-guidelines](plugins/coding/skills/karpathy-guidelines/SKILL.md) | Avoiding common LLM coding mistakes: overcomplication, unrequested changes, unverified work. Vendored from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (MIT) |
 | writing | [skimmable-bulk-text](plugins/writing/skills/skimmable-bulk-text/SKILL.md) | Writing many short parallel items people skim: titles, alerts, notifications, dashboard cards, summary columns |
+| visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream rather than copied, since it updates weekly |
 
 ## Install
 
@@ -17,9 +18,12 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 /plugin marketplace add <github-user>/skills
 /plugin install coding@anirudh-skills
 /plugin install writing@anirudh-skills
+/plugin install diagram-design@anirudh-skills
 ```
 
 Install only the categories you want.
+
+**Other agents (Cursor, Codex, etc.)** can install diagram-design directly with `npx skills add cathrynlavery/diagram-design`.
 
 **claude.ai / Claude app**
 
@@ -28,7 +32,7 @@ Install only the categories you want.
 ./scripts/package.sh <skill-name>    # or just one
 ```
 
-Then upload the zip under Settings > Capabilities > Skills.
+Then upload the zip under Settings > Capabilities > Skills. For diagram-design, zip `skills/diagram-design` from [its repo](https://github.com/cathrynlavery/diagram-design) instead.
 
 ## Adding a skill
 

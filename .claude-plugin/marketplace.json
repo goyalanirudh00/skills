@@ -13,6 +13,14 @@
       "name": "writing",
       "source": "./plugins/writing",
       "description": "Skills for generated text people read."
+    },
+    {
+      "name": "diagram-design",
+      "source": {
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design"
+      },
+      "description": "Editorial HTML/SVG diagrams in 45 types (architecture, sequence, ER, trust boundaries and more). Third-party, by Cathryn Lavery (MIT), pulled live from upstream."
     }
   ]
 }
