@@ -7,7 +7,11 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 | Category | Skill | Use it for |
 | --- | --- | --- |
 | coding | [karpathy-guidelines](plugins/coding/skills/karpathy-guidelines/SKILL.md) | Avoiding common LLM coding mistakes: overcomplication, unrequested changes, unverified work. Vendored from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (MIT) |
+| coding | [git-guardrails-claude-code](plugins/coding/skills/git-guardrails-claude-code/SKILL.md) | Sets up a hook that blocks dangerous git commands (push, `reset --hard`, `clean -f`, `branch -D`). Run it per project on repos where Claude should never push. Needs `jq`. From [mattpocock/skills](https://github.com/mattpocock/skills) (MIT) |
 | writing | [skimmable-bulk-text](plugins/writing/skills/skimmable-bulk-text/SKILL.md) | Writing many short parallel items people skim: titles, alerts, notifications, dashboard cards, summary columns |
+| productivity | [grill-me](plugins/productivity/skills/grill-me/SKILL.md) + [grilling](plugins/productivity/skills/grilling/SKILL.md) | A relentless interview to find holes in a plan or design before building. Invoke with `/grill-me`. From mattpocock/skills (MIT) |
+| productivity | [handoff](plugins/productivity/skills/handoff/SKILL.md) | Condense a long session into a document a fresh agent can pick up. From mattpocock/skills (MIT) |
+| productivity | [writing-for-agents](plugins/productivity/skills/writing-for-agents/SKILL.md) | How to write skills, AGENTS.md and CLAUDE.md files that agents follow well. From mattpocock/skills (MIT) |
 | visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream since it updates weekly |
 
 ### Per-project: Superpowers
@@ -50,6 +54,7 @@ Installed from the publishers' own marketplaces. Only the plugins below are enab
 /plugin marketplace add <github-user>/skills
 /plugin install coding@anirudh-skills
 /plugin install writing@anirudh-skills
+/plugin install productivity@anirudh-skills
 /plugin install diagram-design@anirudh-skills
 
 /plugin marketplace add trailofbits/skills
@@ -80,4 +85,4 @@ For a third-party plugin, add it to the picks table and to `enabledPlugins` in `
 
 ## Vendored skills
 
-Third-party skills copied into this repo keep an `UPSTREAM.md` with their source and commit. Run `./scripts/sync-upstream.sh` to pull updates, then review the diff before committing.
+Third-party skills copied into this repo keep an `UPSTREAM.md` with their source and commit. Run `./scripts/sync-upstream.sh` to pull updates for all of them, then review the diff before committing. To vendor a new one, copy its folder, add an `UPSTREAM.md`, and add a line to the `VENDORED` list in that script.

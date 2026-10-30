@@ -13,6 +13,7 @@
   "enabledPlugins": {
     "coding@anirudh-skills": true,
     "writing@anirudh-skills": true,
+    "productivity@anirudh-skills": true,
     "diagram-design@anirudh-skills": true,
 
     "static-analysis@trailofbits": true,

@@ -1,0 +1,8 @@
+{
+  "name": "productivity",
+  "version": "0.1.0",
+  "description": "Skills for planning, handoffs and writing instructions for agents.",
+  "author": {
+    "name": "Anirudh Goyal"
+  }
+}

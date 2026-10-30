@@ -15,6 +15,11 @@
       "description": "Skills for generated text people read."
     },
     {
+      "name": "productivity",
+      "source": "./plugins/productivity",
+      "description": "Skills for planning, handoffs and writing instructions for agents."
+    },
+    {
       "name": "diagram-design",
       "source": {
         "source": "github",
