@@ -1,38 +1,65 @@
 # Skills
 
-My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview), grouped by category. Each category is a Claude Code plugin under `plugins/`, and each skill is a folder with a `SKILL.md`.
+My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview), grouped by category. Each category is a Claude Code plugin under `plugins/`, and each skill is a folder with a `SKILL.md`. Third-party skills I rely on are listed too, installed from their own repos so they stay current.
 
-## Skills
+## My skills
 
 | Category | Skill | Use it for |
 | --- | --- | --- |
 | coding | [karpathy-guidelines](plugins/coding/skills/karpathy-guidelines/SKILL.md) | Avoiding common LLM coding mistakes: overcomplication, unrequested changes, unverified work. Vendored from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (MIT) |
 | writing | [skimmable-bulk-text](plugins/writing/skills/skimmable-bulk-text/SKILL.md) | Writing many short parallel items people skim: titles, alerts, notifications, dashboard cards, summary columns |
-| visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream rather than copied, since it updates weekly |
+| visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream since it updates weekly |
+
+## Third-party picks
+
+Installed from the publishers' own marketplaces. Only the plugins below are enabled, not the whole collections.
+
+**Security: [Trail of Bits](https://github.com/trailofbits/skills)** (CC-BY-SA-4.0)
+
+| Plugin | Use it for |
+| --- | --- |
+| static-analysis | CodeQL and Semgrep scans, SARIF parsing |
+| differential-review | Security review of a diff or PR, using git history |
+| insecure-defaults | Hardcoded credentials, fallback secrets, weak crypto, debug features left on |
+| sharp-edges | Error-prone APIs, dangerous configs, footgun designs |
+| supply-chain-risk-auditor | Risk audit of npm, PyPI and Go dependencies |
+| agentic-actions-auditor | GitHub Actions workflows that run AI agents |
+
+**Infrastructure: [HashiCorp](https://github.com/hashicorp/agent-skills)** (MPL-2.0)
+
+| Plugin | Use it for |
+| --- | --- |
+| terraform | Style guide, modules, tests, imports, stacks, policy, provider development |
 
 ## Install
 
-**Claude Code**
+**Claude Code, everything at once:** merge [`claude-code/settings.json`](claude-code/settings.json) into `~/.claude/settings.json` and restart Claude Code. It registers all three marketplaces and enables exactly the plugins above.
+
+**Claude Code, by hand:**
 
 ```
 /plugin marketplace add <github-user>/skills
 /plugin install coding@anirudh-skills
 /plugin install writing@anirudh-skills
 /plugin install diagram-design@anirudh-skills
+
+/plugin marketplace add trailofbits/skills
+/plugin install static-analysis@trailofbits      # and the others listed above
+
+/plugin marketplace add hashicorp/agent-skills
+/plugin install terraform@hashicorp
 ```
 
-Install only the categories you want.
-
-**Other agents (Cursor, Codex, etc.)** can install diagram-design directly with `npx skills add cathrynlavery/diagram-design`.
+**Other agents (Cursor, Codex, etc.):** `npx skills add cathrynlavery/diagram-design`, `npx skills add hashicorp/agent-skills`.
 
 **claude.ai / Claude app**
 
 ```
-./scripts/package.sh                 # builds dist/<skill>.zip for every skill
+./scripts/package.sh                 # builds dist/<skill>.zip for every skill in this repo
 ./scripts/package.sh <skill-name>    # or just one
 ```
 
-Then upload the zip under Settings > Capabilities > Skills. For diagram-design, zip `skills/diagram-design` from [its repo](https://github.com/cathrynlavery/diagram-design) instead.
+Then upload the zip under Settings > Capabilities > Skills. For a third-party skill, zip its skill folder from the upstream repo instead.
 
 ## Adding a skill
 
@@ -40,6 +67,8 @@ Then upload the zip under Settings > Capabilities > Skills. For diagram-design, 
 2. For a new category, add `plugins/<category>/.claude-plugin/plugin.json` and an entry in `.claude-plugin/marketplace.json`.
 3. Add a row to the table above and bump that category's `version`.
 
+For a third-party plugin, add it to the picks table and to `enabledPlugins` in `claude-code/settings.json`.
+
 ## Vendored skills
 
-Third-party skills keep an `UPSTREAM.md` with their source and commit. Run `./scripts/sync-upstream.sh` to pull updates, then review the diff before committing.
+Third-party skills copied into this repo keep an `UPSTREAM.md` with their source and commit. Run `./scripts/sync-upstream.sh` to pull updates, then review the diff before committing.

@@ -1,0 +1,27 @@
+{
+  "extraKnownMarketplaces": {
+    "anirudh-skills": {
+      "source": { "source": "github", "repo": "<github-user>/skills" }
+    },
+    "trailofbits": {
+      "source": { "source": "github", "repo": "trailofbits/skills" }
+    },
+    "hashicorp": {
+      "source": { "source": "github", "repo": "hashicorp/agent-skills" }
+    }
+  },
+  "enabledPlugins": {
+    "coding@anirudh-skills": true,
+    "writing@anirudh-skills": true,
+    "diagram-design@anirudh-skills": true,
+
+    "static-analysis@trailofbits": true,
+    "differential-review@trailofbits": true,
+    "insecure-defaults@trailofbits": true,
+    "sharp-edges@trailofbits": true,
+    "supply-chain-risk-auditor@trailofbits": true,
+    "agentic-actions-auditor@trailofbits": true,
+
+    "terraform@hashicorp": true
+  }
+}
