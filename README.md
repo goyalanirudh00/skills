@@ -52,7 +52,7 @@ Installed from the publishers' own marketplaces. Only the plugins below are enab
 **Claude Code, by hand:**
 
 ```
-/plugin marketplace add <github-user>/skills
+/plugin marketplace add goyalanirudh00/skills
 /plugin install coding@anirudh-skills
 /plugin install writing@anirudh-skills
 /plugin install productivity@anirudh-skills

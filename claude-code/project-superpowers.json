@@ -1,7 +1,7 @@
 {
   "extraKnownMarketplaces": {
     "anirudh-skills": {
-      "source": { "source": "github", "repo": "<github-user>/skills" }
+      "source": { "source": "github", "repo": "goyalanirudh00/skills" }
     }
   },
   "enabledPlugins": {
