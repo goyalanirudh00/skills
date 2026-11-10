@@ -13,6 +13,7 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 | productivity | [grill-me](plugins/productivity/skills/grill-me/SKILL.md) + [grilling](plugins/productivity/skills/grilling/SKILL.md) | A relentless interview to find holes in a plan or design before building. Invoke with `/grill-me`. From mattpocock/skills (MIT) |
 | productivity | [handoff](plugins/productivity/skills/handoff/SKILL.md) | Condense a long session into a document a fresh agent can pick up. From mattpocock/skills (MIT) |
 | productivity | [writing-for-agents](plugins/productivity/skills/writing-for-agents/SKILL.md) | How to write skills, AGENTS.md and CLAUDE.md files that agents follow well. From mattpocock/skills (MIT) |
+| security | [security-audit](plugins/security/skills/security-audit/SKILL.md) | Whole-repo security audit: maps trust boundaries, hunts with parallel subagents, and has fresh agents verify each finding before it lands in `findings.json` and a report. Answers security questions in a light guidance mode by default; the full six-phase run starts only when you ask for an audit or pen test. Full runs are costly, so ask for the `quick` profile or set an agent budget on large repos. Needs Node for its validators. From [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) (MIT) |
 | visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream since it updates weekly |
 
 ### Per-project: Superpowers
@@ -56,6 +57,7 @@ Installed from the publishers' own marketplaces. Only the plugins below are enab
 /plugin install coding@anirudh-skills
 /plugin install writing@anirudh-skills
 /plugin install productivity@anirudh-skills
+/plugin install security@anirudh-skills
 /plugin install diagram-design@anirudh-skills
 
 /plugin marketplace add trailofbits/skills

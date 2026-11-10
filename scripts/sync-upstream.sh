@@ -16,6 +16,7 @@ VENDORED=(
   "mattpocock/skills|skills/productivity/grilling|plugins/productivity/skills/grilling"
   "mattpocock/skills|skills/productivity/handoff|plugins/productivity/skills/handoff"
   "mattpocock/skills|skills/productivity/writing-for-agents|plugins/productivity/skills/writing-for-agents"
+  "cloudflare/security-audit-skill|skills/security-audit|plugins/security/skills/security-audit"
 )
 
 for entry in "${VENDORED[@]}"; do
