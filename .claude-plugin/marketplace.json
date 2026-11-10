@@ -20,6 +20,11 @@
       "description": "Skills for planning, handoffs and writing instructions for agents."
     },
     {
+      "name": "security",
+      "source": "./plugins/security",
+      "description": "Skills for auditing code for exploitable vulnerabilities."
+    },
+    {
       "name": "diagram-design",
       "source": {
         "source": "github",
