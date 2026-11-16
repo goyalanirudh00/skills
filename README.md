@@ -15,6 +15,7 @@ My personal collection of [Claude skills](https://docs.claude.com/en/docs/agents
 | productivity | [writing-for-agents](plugins/productivity/skills/writing-for-agents/SKILL.md) | How to write skills, AGENTS.md and CLAUDE.md files that agents follow well. From mattpocock/skills (MIT) |
 | security | [security-audit](plugins/security/skills/security-audit/SKILL.md) | Whole-repo security audit: maps trust boundaries, hunts with parallel subagents, and has fresh agents verify each finding before it lands in `findings.json` and a report. Answers security questions in a light guidance mode by default; the full six-phase run starts only when you ask for an audit or pen test. Full runs are costly, so ask for the `quick` profile or set an agent budget on large repos. Needs Node for its validators. From [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) (MIT) |
 | visualization | [diagram-design](https://github.com/cathrynlavery/diagram-design) | Editorial HTML/SVG diagrams in 45 types, including architecture, sequence, ER and trust-boundary views. Third-party (MIT), linked from upstream since it updates weekly |
+| quantum | [Qiskit skills](https://github.com/Qiskit/skills) | IBM's official Qiskit skills, all five: `simulate-fermionic-systems` (molecules to qubits, encodings, Trotterization, ground-state energies), `select-sqd-eigensolver` (PySCF, Dice, SBD or Fulqrum for SQD), `select-error-mitigation` (ZNE, PEC, TREX, twirling and more, sized to your circuit), `migrate-qiskit-ibm-runtime` and `managed-workflows-quickstart`. Third-party (Apache-2.0), linked from upstream since IBM updates it continuously |
 
 ### Per-project: Superpowers
 
@@ -59,6 +60,7 @@ Installed from the publishers' own marketplaces. Only the plugins below are enab
 /plugin install productivity@anirudh-skills
 /plugin install security@anirudh-skills
 /plugin install diagram-design@anirudh-skills
+/plugin install qiskit-ai-skills@anirudh-skills
 
 /plugin marketplace add trailofbits/skills
 /plugin install static-analysis@trailofbits      # and the others listed above
@@ -67,7 +69,7 @@ Installed from the publishers' own marketplaces. Only the plugins below are enab
 /plugin install terraform@hashicorp
 ```
 
-**Other agents (Cursor, Codex, etc.):** `npx skills add cathrynlavery/diagram-design`, `npx skills add hashicorp/agent-skills`.
+**Other agents (Cursor, Codex, etc.):** `npx skills add cathrynlavery/diagram-design`, `npx skills add Qiskit/skills`, `npx skills add hashicorp/agent-skills`.
 
 **claude.ai / Claude app**
 

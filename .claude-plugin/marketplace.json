@@ -33,6 +33,14 @@
       "description": "Editorial HTML/SVG diagrams in 45 types (architecture, sequence, ER, trust boundaries and more). Third-party, by Cathryn Lavery (MIT), pulled live from upstream."
     },
     {
+      "name": "qiskit-ai-skills",
+      "source": {
+        "source": "github",
+        "repo": "Qiskit/skills"
+      },
+      "description": "IBM's official Qiskit skills (Apache-2.0), pulled live from upstream: fermionic simulation, SQD eigensolver choice, error mitigation, runtime migration and Managed Workflows."
+    },
+    {
       "name": "superpowers",
       "source": {
         "source": "url",
